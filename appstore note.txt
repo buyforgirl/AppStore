@@ -1,0 +1,38 @@
+skill: python 2.7, scrapy, mongodb, proxy, scrapjs, node.js, meteor
+performance: 100 pages/second (vs 30k/second)
+three part:
+1. crawler
+2. recommender
+3. front-end
+
+1. crawler
+1.1 crawl home page
+1.1.1 crawl homepage Huawei Appstore
+scapy install: windows
+pip install lxml==3.4.2
+pip install scapy
+
+// https://docs.python.org/2/library/xml.etree.elementtree.html  ---xPath
+// https://docs.python.org/2/library/re.html ---regular expression
+// group(1) match the first parenthesized subgroup
+// group(0) match the entire match
+// download and install Python for Windows Extensions
+run scrapy crawl huawei
+
+1.1.2 save crawled data in a file
+
+change setting file:
+ITEM_PIPELINES-- control priority, Download_delay(delay time seconds)
+edit pipelines.py
+// https://docs.python.org/2/tutorial/inputoutput.html open()-- w is write, b is append in the tail
+
+1.1.3 follow urls in homepage to get more data
+scrapy.Request(url, callback=self.parse_item) to get more information 
+
+1.2 Advanced Techniques
+1.2.1 render javascript
+splash-- a Javascript rendering service
+//https://github.com/scrapinghub/splash
+scrapyjs -- This library provides Scrapy+JavaScript integration using Splash
+//https://github.com/scrapinghub/scrapy-splash
+// pip scrapyjs

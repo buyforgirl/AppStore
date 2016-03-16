@@ -10,8 +10,9 @@ import scrapy
 
 class AppstorecrawlerItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
     title = scrapy.Field()
     url = scrapy.Field()
     appid = scrapy.Field()
     intro = scrapy.Field()
+    recommended = scrapy.Field()
+    thumbnail = scrapy.Field()
